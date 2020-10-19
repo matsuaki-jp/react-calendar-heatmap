@@ -302,7 +302,7 @@ class CalendarHeatmap extends React.Component {
         this.props.horizontal ? '' : `${CSS_PSEDUO_NAMESPACE}small-text`
       } ${CSS_PSEDUO_NAMESPACE}weekday-label`;
       // eslint-disable-next-line no-bitwise
-      return dayIndex & 1 ? (
+      return this.latestProps.showAllWeekdayLabels ||  dayIndex & 1 ? (
         <text key={`${x}${y}`} x={x} y={y} className={cssClasses}>
           {weekdayLabel}
         </text>
@@ -362,6 +362,7 @@ CalendarHeatmap.propTypes = {
   onMouseOver: PropTypes.func, // callback function when mouse pointer is over a square
   onMouseLeave: PropTypes.func, // callback function when mouse pointer is left a square
   transformDayElement: PropTypes.func, // function to further transform the svg element for a single day
+  showAllWeekdayLabels: PropTypes.bool, // whether to show all weekday labels
 };
 
 CalendarHeatmap.defaultProps = {
@@ -382,6 +383,7 @@ CalendarHeatmap.defaultProps = {
   onMouseOver: null,
   onMouseLeave: null,
   transformDayElement: null,
+  showAllWeekdayLabels: false,
 };
 
 export default CalendarHeatmap;
