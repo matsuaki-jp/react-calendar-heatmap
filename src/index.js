@@ -302,7 +302,7 @@ class CalendarHeatmap extends React.Component {
         this.props.horizontal ? '' : `${CSS_PSEDUO_NAMESPACE}small-text`
       } ${CSS_PSEDUO_NAMESPACE}weekday-label`;
       // eslint-disable-next-line no-bitwise
-      return this.latestProps.showAllWeekdayLabels ||  dayIndex & 1 ? (
+      return this.props.showAllWeekdayLabels ||  dayIndex & 1 ? (
         <text key={`${x}${y}`} x={x} y={y} className={cssClasses}>
           {weekdayLabel}
         </text>
