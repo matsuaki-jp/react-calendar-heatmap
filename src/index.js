@@ -45,7 +45,7 @@ class CalendarHeatmap extends React.Component {
   getWeekdayLabelSize() {
     // add allweek font size
     if (this.props.showAllWeekdayLabels){
-      return 10
+      return SQUARE_SIZE
     }
     if (!this.props.showWeekdayLabels) {
       return 0;
@@ -53,7 +53,7 @@ class CalendarHeatmap extends React.Component {
     if (this.props.horizontal) {
       return 30;
     }
-    return SQUARE_SIZE * 1.5;
+    return SQUARE_SIZE;
   }
 
   getStartDate() {
@@ -191,7 +191,7 @@ class CalendarHeatmap extends React.Component {
 
   getSquareCoordinates(dayIndex) {
     if (this.props.horizontal) {
-      return [0, dayIndex * this.getSquareSizeWithGutter()];
+      return [this.getWeekdayLabelSize(), (dayIndex+1) * this.getSquareSizeWithGutter()];
     }
     return [dayIndex * this.getSquareSizeWithGutter(), 0];
   }
