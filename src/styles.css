@@ -20,6 +20,15 @@
 }
 
 /*
+ * every week day font
+ */
+
+.react-calendar-heatmap-xx-small-text-weekday-label
+{
+  font-size: xx-small; 
+}
+
+/*
  * Default color scale
  */
 
