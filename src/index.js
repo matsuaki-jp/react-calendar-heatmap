@@ -168,6 +168,9 @@ class CalendarHeatmap extends React.Component {
   }
 
   getTransformForMonthLabels() {
+    if (this.props.showAllWeekdayLabels) {
+       return "translate(20, 0)";
+    } 
     if (this.props.horizontal) {
       return `translate(${this.getWeekdayLabelSize()}, 0)`;
     }
@@ -176,6 +179,9 @@ class CalendarHeatmap extends React.Component {
   }
 
   getTransformForAllWeeks() {
+    if (this.props.showAllWeekdayLabels){
+      return "translate(10, 5)";
+    }
     if (this.props.horizontal) {
       return `translate(${this.getWeekdayLabelSize()}, ${this.getMonthLabelSize()})`;
     }
